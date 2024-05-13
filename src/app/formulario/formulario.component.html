@@ -1,0 +1,40 @@
+@if (mostrarFormulario) {
+    <form [formGroup]="ordenadorForm" (ngSubmit)="onSubmit()">
+        <label for="idOrdenador">ID Ordenador </label>
+        <input id="idOrdenador" formControlName="idOrdenador" />
+        @if (ordenadorForm.get('idOrdenador')?.invalid && ordenadorForm.get('idOrdenador')?.touched) {
+            <p>ID Ordenador es requerido y debe ser un número.</p>
+        }
+        <br>
+
+        <label for="marca">Marca </label>
+        <input id="marca" formControlName="marca" />
+        @if (ordenadorForm.get('marca')?.invalid && ordenadorForm.get('marca')?.touched) {
+            <p>Marca es requerida y debe tener al menos 2 caracteres.</p>
+        }
+        <br>
+        
+        <label for="modelo">Modelo </label>
+        <input id="modelo" formControlName="modelo" />
+        @if (ordenadorForm.get('modelo')?.invalid && ordenadorForm.get('modelo')?.touched) {
+            <p>Modelo es requerido y debe tener al menos 2 caracteres.</p>
+        }
+        <br>
+        
+        <label for="procesador">Procesador </label>
+        <input id="procesador" formControlName="procesador" />
+        @if (ordenadorForm.get('procesador')?.invalid && ordenadorForm.get('procesador')?.touched) {
+            <p>Procesador es requerido y debe tener al menos 2 caracteres.</p>
+        }
+        <br>
+        
+        <label for="ram">RAM </label>
+        <input id="ram" formControlName="ram" />
+        @if (ordenadorForm.get('ram')?.invalid && ordenadorForm.get('ram')?.touched) {
+            <p>RAM es requerido.</p>
+        }
+        <br>
+
+        <button type="submit">{{ ordenador ? 'Actualizar' : 'Enviar' }}</button>
+    </form>
+}

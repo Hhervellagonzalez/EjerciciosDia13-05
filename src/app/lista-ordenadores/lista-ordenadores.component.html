@@ -1,0 +1,20 @@
+<h2>Lista de Ordenadores</h2>
+@if (ordenadores.length > 0) {
+    <ul>
+        @for (ordenador of ordenadores; track $index) {
+            <li>
+                {{ ordenador.idOrdenador }} - {{ ordenador.marca }} {{ ordenador.modelo }} ( procesador: {{ ordenador.procesador }}, Memoria Ram: {{ ordenador.ram }})
+                <button (click)="editarOrdenador(ordenador)">Modificar</button>
+                <button (click)="eliminarOrdenador(ordenador.idOrdenador)">Eliminar</button>
+            </li>
+        }
+    </ul>
+} @else {
+    <p>No hay ordenadores agregados.</p>
+}
+@if (mostrarFormulario) {
+    <app-formulario [ordenador]="ordenadorSeleccionado" (formSubmitted)="actualizarLista()"></app-formulario>
+}
+<button (click)="verFormulario()">
+    {{ mostrarFormulario ? 'Ocultar Formulario' : 'Añadir Nuevo Ordenador' }}
+</button>

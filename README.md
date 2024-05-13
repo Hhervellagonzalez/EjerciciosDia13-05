@@ -8,7 +8,9 @@ Para detectar los cambios en los formularios reactivos, tienes que suscribirte a
 
 C. ¿Cómo se vinculan los formularios reactivos con la interfaz de usuario Angular?
 Los formularios reactivos se vinculan a la interfaz de usuario en Angular utilizando las directivas [formGroup] que sus campos están definidos en el componente y formControlName que vincula cada campo de el formulario con los campos de el FormGroup.
+
 D. ¿Como se envían los datos del formulario reactivo a un servidor en angular?
 Crear un servicio con HttpClient, inyectarlo en el componente con el constructor, y en el método onSubmit usar el servicio para enviar los datos del formulario suscribiéndote a la respuesta.
+
 E. Para que sirve el operador reactivo switchmap
 switchMap se usa para manejar solo el último valor emitido, cancelando los anteriores. 
